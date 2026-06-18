@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fintech - Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-950 text-gray-100 min-h-screen flex">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <span class="logo-fin">Fin</span><span class="logo-tech">tech</span>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active">
+        <span class="nav-icon">🏠</span>
+        <span>Dashboard</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">↔️</span>
+        <span>Transações</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">📋</span>
+        <span>Pagamentos</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🎯</span>
+        <span>Metas</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">💸</span>
+        <span>Dívidas</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">📈</span>
+        <span>Investimentos</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">⚙️</span>
+        <span>Configurações</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="#" class="nav-item">
+        <span class="nav-icon">🚪</span>
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- HEADER -->
+    <header class="page-header">
+      <div>
+        <h1 class="page-title">Dashboard</h1>
+        <p class="page-subtitle">Visão geral da sua vida financeira</p>
+      </div>
+      <button class="btn-primary">+ Adicionar investimento</button>
+    </header>
+
+    <!-- KPI CARDS -->
+    <section class="kpi-grid" aria-label="Resumo financeiro">
+
+      <article class="kpi-card">
+        <div class="kpi-info">
+          <p class="kpi-label">Total investido</p>
+          <p class="kpi-value green">R$ 12.400,00</p>
+        </div>
+        <div class="kpi-icon green-bg">💰</div>
+      </article>
+
+      <article class="kpi-card">
+        <div class="kpi-info">
+          <p class="kpi-label">Rendimento total</p>
+          <p class="kpi-value green">+R$ 843,20</p>
+        </div>
+        <div class="kpi-icon teal-bg">📈</div>
+      </article>
+
+      <article class="kpi-card">
+        <div class="kpi-info">
+          <p class="kpi-label">Rentabilidade</p>
+          <p class="kpi-value green">+6,8% a.a.</p>
+        </div>
+        <div class="kpi-icon purple-bg">%</div>
+      </article>
+
+      <article class="kpi-card">
+        <div class="kpi-info">
+          <p class="kpi-label">Ativos</p>
+          <p class="kpi-value white">4 investimentos</p>
+        </div>
+        <div class="kpi-icon orange-bg">🗂️</div>
+      </article>
+
+    </section>
+
+    <!-- CHARTS ROW -->
+    <section class="charts-row" aria-label="Gráficos">
+
+      <!-- Evolução do Patrimônio -->
+      <article class="chart-card chart-wide">
+        <div class="chart-header">
+          <div>
+            <h2 class="chart-title">Evolução do patrimônio</h2>
+            <p class="chart-subtitle">Últimos 6 meses</p>
+          </div>
+          <select class="select-period">
+            <option>6 meses</option>
+            <option>3 meses</option>
+            <option>1 ano</option>
+          </select>
+        </div>
+
+        <!-- SVG Chart -->
+        <div class="chart-area">
+          <svg viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg" class="line-chart">
+            <!-- Grid lines -->
+            <line x1="0" y1="130" x2="500" y2="130" stroke="#2d3748" stroke-width="1"/>
+            <line x1="0" y1="100" x2="500" y2="100" stroke="#2d3748" stroke-width="1"/>
+            <line x1="0" y1="70" x2="500" y2="70" stroke="#2d3748" stroke-width="1"/>
+            <line x1="0" y1="40" x2="500" y2="40" stroke="#2d3748" stroke-width="1"/>
+            <line x1="0" y1="10" x2="500" y2="10" stroke="#2d3748" stroke-width="1"/>
+
+            <!-- Labels Y -->
+            <text x="5" y="133" fill="#9ca3af" font-size="10">0</text>
+            <text x="5" y="103" fill="#9ca3af" font-size="10">3k</text>
+            <text x="5" y="73" fill="#9ca3af" font-size="10">6k</text>
+            <text x="5" y="43" fill="#9ca3af" font-size="10">9k</text>
+            <text x="5" y="13" fill="#9ca3af" font-size="10">12k</text>
+
+            <!-- Area fill -->
+            <defs>
+              <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#10b981" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <polygon
+              points="40,110 120,95 200,80 280,60 360,35 440,20 440,130 40,130"
+              fill="url(#areaGrad)"
+            />
+
+            <!-- Line -->
+            <polyline
+              points="40,110 120,95 200,80 280,60 360,35 440,20"
+              fill="none"
+              stroke="#10b981"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+            <!-- Dots -->
+            <circle cx="40"  cy="110" r="4" fill="#10b981"/>
+            <circle cx="120" cy="95"  r="4" fill="#10b981"/>
+            <circle cx="200" cy="80"  r="4" fill="#10b981"/>
+            <circle cx="280" cy="60"  r="4" fill="#10b981"/>
+            <circle cx="360" cy="35"  r="4" fill="#10b981"/>
+            <circle cx="440" cy="20"  r="4" fill="#10b981"/>
+
+            <!-- Labels X -->
+            <text x="32"  y="150" fill="#9ca3af" font-size="10">Nov</text>
+            <text x="112" y="150" fill="#9ca3af" font-size="10">Dez</text>
+            <text x="193" y="150" fill="#9ca3af" font-size="10">Jan</text>
+            <text x="273" y="150" fill="#9ca3af" font-size="10">Fev</text>
+            <text x="353" y="150" fill="#9ca3af" font-size="10">Mar</text>
+            <text x="433" y="150" fill="#9ca3af" font-size="10">Abr</text>
+          </svg>
+        </div>
+      </article>
+
+      <!-- Distribuição por tipo -->
+      <article class="chart-card chart-narrow">
+        <h2 class="chart-title">Distribuição por tipo</h2>
+
+        <div class="donut-wrapper">
+          <svg viewBox="0 0 120 120" class="donut-svg">
+            <circle cx="60" cy="60" r="45" fill="none" stroke="#1e293b" stroke-width="20"/>
+            <!-- Renda Fixa 60% -->
+            <circle cx="60" cy="60" r="45" fill="none" stroke="#10b981"
+              stroke-width="20"
+              stroke-dasharray="169.6 282.7"
+              stroke-dashoffset="0"
+              transform="rotate(-90 60 60)"/>
+            <!-- Renda Variável 30% -->
+            <circle cx="60" cy="60" r="45" fill="none" stroke="#3b82f6"
+              stroke-width="20"
+              stroke-dasharray="84.8 282.7"
+              stroke-dashoffset="-169.6"
+              transform="rotate(-90 60 60)"/>
+            <!-- Fundos 10% -->
+            <circle cx="60" cy="60" r="45" fill="none" stroke="#f59e0b"
+              stroke-width="20"
+              stroke-dasharray="28.3 282.7"
+              stroke-dashoffset="-254.4"
+              transform="rotate(-90 60 60)"/>
+          </svg>
+        </div>
+
+        <ul class="legend">
+          <li class="legend-item">
+            <span class="legend-dot green-dot"></span>
+            <span class="legend-label">Renda Fixa</span>
+            <span class="legend-pct">60%</span>
+          </li>
+          <li class="legend-item">
+            <span class="legend-dot blue-dot"></span>
+            <span class="legend-label">Renda Variável</span>
+            <span class="legend-pct">30%</span>
+          </li>
+          <li class="legend-item">
+            <span class="legend-dot yellow-dot"></span>
+            <span class="legend-label">Fundos</span>
+            <span class="legend-pct">10%</span>
+          </li>
+        </ul>
+      </article>
+
+    </section>
+
+    <!-- INVESTMENTS TABLE -->
+    <section class="investments-section" aria-label="Meus investimentos">
+      <h2 class="section-title">Meus investimentos</h2>
+
+      <div class="investments-grid">
+
+        <article class="invest-card">
+          <div class="invest-header">
+            <span class="invest-icon">🏦</span>
+            <div>
+              <p class="invest-name">Tesouro Selic 2029</p>
+              <p class="invest-type">Renda Fixa · Tesouro Direto</p>
+            </div>
+          </div>
+          <span class="badge badge-low">Baixo risco</span>
+          <div class="invest-values">
+            <div>
+              <p class="invest-value-label">Valor atual</p>
+              <p class="invest-value">R$ 5.312,00</p>
+            </div>
+            <div>
+              <p class="invest-value-label">Rentabilidade</p>
+              <p class="invest-return">+6,2%</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="invest-card">
+          <div class="invest-header">
+            <span class="invest-icon">🏦</span>
+            <div>
+              <p class="invest-name">CDB Banco Inter</p>
+              <p class="invest-type">Renda Fixa · CDB</p>
+            </div>
+          </div>
+          <span class="badge badge-low">Baixo risco</span>
+          <div class="invest-values">
+            <div>
+              <p class="invest-value-label">Valor atual</p>
+              <p class="invest-value">R$ 3.198,00</p>
+            </div>
+            <div>
+              <p class="invest-value-label">Rentabilidade</p>
+              <p class="invest-return">+6,0%</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="invest-card">
+          <div class="invest-header">
+            <span class="invest-icon">🏢</span>
+            <div>
+              <p class="invest-name">FII XPML11</p>
+              <p class="invest-type">Fundo Imobiliário</p>
+            </div>
+          </div>
+          <span class="badge badge-medium">Médio risco</span>
+          <div class="invest-values">
+            <div>
+              <p class="invest-value-label">Valor atual</p>
+              <p class="invest-value">R$ 3.210,00</p>
+            </div>
+            <div>
+              <p class="invest-value-label">Rentabilidade</p>
+              <p class="invest-return">+7,0%</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="invest-card">
+          <div class="invest-header">
+            <span class="invest-icon">📊</span>
+            <div>
+              <p class="invest-name">Ações PETR4</p>
+              <p class="invest-type">Renda Variável · Ações</p>
+            </div>
+          </div>
+          <span class="badge badge-high">Alto risco</span>
+          <div class="invest-values">
+            <div>
+              <p class="invest-value-label">Valor atual</p>
+              <p class="invest-value">R$ 1.523,20</p>
+            </div>
+            <div>
+              <p class="invest-value-label">Rentabilidade</p>
+              <p class="invest-return">+8,8%</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
