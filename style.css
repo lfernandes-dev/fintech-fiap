@@ -1,9 +1,3 @@
-/* =============================================
-   FINTECH — Dashboard
-   Arquivo CSS externo (separado do HTML)
-   ============================================= */
-
-/* --- Reset & Base --- */
 * {
   margin: 0;
   padding: 0;
@@ -18,9 +12,6 @@ body {
   display: flex;
 }
 
-/* =============================================
-   SIDEBAR
-   ============================================= */
 .sidebar {
   width: 220px;
   min-height: 100vh;
@@ -93,9 +84,6 @@ body {
   padding-top: 16px;
 }
 
-/* =============================================
-   MAIN CONTENT
-   ============================================= */
 .main-content {
   margin-left: 220px;
   flex: 1;
@@ -103,9 +91,7 @@ body {
   min-height: 100vh;
 }
 
-/* =============================================
-   PAGE HEADER
-   ============================================= */
+
 .page-header {
   display: flex;
   align-items: flex-start;
@@ -145,9 +131,7 @@ body {
   background-color: #059669;
 }
 
-/* =============================================
-   KPI CARDS
-   ============================================= */
+
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -201,9 +185,6 @@ body {
 .purple-bg { background-color: #3b0764; color: #e9d5ff; font-weight: 700; font-size: 1rem; }
 .orange-bg { background-color: #7c2d12; }
 
-/* =============================================
-   CHARTS ROW
-   ============================================= */
 .charts-row {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -260,7 +241,6 @@ body {
   display: block;
 }
 
-/* Donut */
 .donut-wrapper {
   display: flex;
   justify-content: center;
@@ -308,9 +288,7 @@ body {
   color: #f1f5f9;
 }
 
-/* =============================================
-   INVESTMENTS SECTION
-   ============================================= */
+
 .investments-section {
   margin-bottom: 32px;
 }
@@ -365,7 +343,6 @@ body {
   margin-top: 2px;
 }
 
-/* Badges */
 .badge {
   display: inline-block;
   padding: 3px 10px;
@@ -415,12 +392,10 @@ body {
   color: #10b981;
 }
 
-/* =============================================
-   RESPONSIVIDADE — MOBILE
-   ============================================= */
+
 @media (max-width: 768px) {
 
-  /* Sidebar vira barra superior no mobile */
+
   .sidebar {
     width: 100%;
     min-height: auto;
@@ -459,7 +434,7 @@ body {
     padding: 8px;
   }
 
-  /* Main ocupa tudo */
+ 
   body {
     flex-direction: column;
   }
@@ -469,17 +444,17 @@ body {
     padding: 20px 16px;
   }
 
-  /* KPI em 2 colunas */
+
   .kpi-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Charts empilham */
+  
   .charts-row {
     grid-template-columns: 1fr;
   }
 
-  /* Investments em 1 coluna */
+
   .investments-grid {
     grid-template-columns: 1fr;
   }
