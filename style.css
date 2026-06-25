@@ -1,0 +1,41 @@
+/* Estilos complementares ao Tailwind CSS */
+
+.chart-area {
+  width: 100%;
+  overflow: hidden;
+}
+
+.line-chart {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.donut-svg {
+  width: 140px;
+  height: 140px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.badge-low {
+  background-color: #064e3b;
+  color: #6ee7b7;
+}
+
+.badge-medium {
+  background-color: #78350f;
+  color: #fcd34d;
+}
+
+.badge-high {
+  background-color: #7f1d1d;
+  color: #fca5a5;
+}
